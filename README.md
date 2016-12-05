@@ -4,7 +4,7 @@
 [![bitHound Score][bithound-badge]][bithound]
 [![Downloads](https://img.shields.io/npm/dm/rnkit-alert-view.svg)](https://www.npmjs.com/package/rnkit-alert-view)
 
-The best DatePicker and DataPicker for [React Native][rn].
+The best AlertView for [React Native][rn].
 
 [**Support me with a Follow**](https://github.com/simman/followers)
 
