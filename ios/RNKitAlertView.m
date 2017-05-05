@@ -8,10 +8,10 @@
 
 #import "RNKitAlertView.h"
 
-#import "RCTConvert.h"
-#import "RCTLog.h"
-#import "RCTUtils.h"
-#import "RCTEventDispatcher.h"
+#import <React/RCTConvert.h>
+#import <React/RCTLog.h>
+#import <React/RCTUtils.h>
+#import <React/RCTEventDispatcher.h>
 
 #import "Masonry.h"
 #import "MMPopupItem.h"

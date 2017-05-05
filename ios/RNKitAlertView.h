@@ -7,8 +7,8 @@
 //
 
 
-#import "RCTEventEmitter.h"
-#import "RCTBridge.h"
+#import <React/RCTEventEmitter.h>
+#import <React/RCTBridge.h>
 
 @interface RNKitAlertView : RCTEventEmitter <RCTBridgeModule>
 
