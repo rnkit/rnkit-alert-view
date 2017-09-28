@@ -44,6 +44,7 @@ public class AlertViewModule extends ReactContextBaseJavaModule implements Appli
     private RNKAlertView mAlertView;
     private EditText etName;
     private InputMethodManager imm;
+    private Callback retCallback;
 
     /* package */ static final String TITLE = "title";
     /* package */ static final String MESSAGE = "message";
@@ -75,7 +76,8 @@ public class AlertViewModule extends ReactContextBaseJavaModule implements Appli
 
     @ReactMethod
     public void alertWithArgs(@Nullable final ReadableMap options, @Nullable final Callback callback) {
-
+        this.retCallback = callback;
+        
         UiThreadUtil.runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -125,9 +127,12 @@ public class AlertViewModule extends ReactContextBaseJavaModule implements Appli
                 builder.setOnItemClickListener(new OnItemClickListener() {
                     @Override
                     public void onItemClick(Object o, int position) {
-                        WritableArray array = Arguments.createArray();
-                        array.pushInt(position);
-                        callback.invoke(array);
+                        if (retCallback != null) {
+                            WritableArray array = Arguments.createArray();
+                            array.pushInt(position);
+                            retCallback.invoke(array);
+                            retCallback = null;
+                        }
                     }
                 });
 
