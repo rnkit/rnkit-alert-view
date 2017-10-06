@@ -21,7 +21,6 @@ public class AlertViewPackage implements ReactPackage {
         return Arrays.<NativeModule>asList(new AlertViewModule(reactContext));
     }
 
-    @Override
     public List<Class<? extends JavaScriptModule>> createJSModules() {
         return  Collections.emptyList();
     }
